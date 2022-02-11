@@ -30,7 +30,7 @@ function createConfig(format, output) {
   const input = path.resolve(__dirname, 'src/index.ts')
 
   output.externalLiveBindings = false;
-  if (isUmdBuild) output.name = 'Queue';
+  if (isUmdBuild) output.name = 'SQ';
   
   if (format !== 'cjs') {
     nodePlugins = [

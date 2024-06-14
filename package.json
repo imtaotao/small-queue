@@ -1,14 +1,15 @@
 {
-  "name": "@rustle/queue",
-  "version": "0.0.1",
+  "name": "small-queue",
+  "version": "1.0.0",
   "description": "Tool Library",
+  "types": "dist/index.d.ts",
   "main": "dist/queue.cjs.js",
+  "unpkg": "./dist/hooks.umd.js",
   "module": "dist/queue.esm-builder.js",
-  "types": "dist/src/index.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "rollup --config",
-    "format": "prettier --write --parser typescript \"(src|test|byBabel)/**/*.(js|ts?(x))\""
+    "build": "rimraf ./dist && rollup --config",
+    "format": "prettier --write --parser typescript \"src/**/*.(js|ts?(x))\""
   },
   "author": "imtaotao",
   "keywords": [
@@ -18,11 +19,20 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imtaotao/small-queue.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imtaotao/small-queue/issues"
+  },
+  "packageManager": "pnpm@9.1.3",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@types/jest": "^27.4.0",
+    "rimraf": "^5.0.7",
     "jest": "^27.5.1",
     "prettier": "^2.5.1",
     "rollup": "^2.67.2",

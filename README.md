@@ -1,7 +1,7 @@
 <div align="center">
-<h2>Queue</h2>
+<h2>small-queue</h2>
 
-[![NPM version](https://img.shields.io/npm/v/@rustle/queue.svg?style=flat-square)](https://www.npmjs.com/package/@rustle/queue)
+[![NPM version](https://img.shields.io/npm/v/small-queue.svg?style=flat-square)](https://www.npmjs.com/package/small-queue)
 
 </div>
 
@@ -10,7 +10,7 @@ Simple queue manipulation tool.
 ### Demo
 
 ```js
-import { Queue } from '@rustle/queue';
+import { Queue } from 'small-queue';
 
 const q = new Queue();
 
@@ -43,7 +43,7 @@ q.awaitFinish().then(() => {
 <!DOCTYPE html>
 <html lang="en">
 <body>
-  <script src="https://unpkg.com/@rustle/queue/dist/queue.umd.js"></script>
+  <script src="https://unpkg.com/small-queue/dist/queue.umd.js"></script>
   <script>
     const { Queue } = window.SQ;
     const q = new Queue();

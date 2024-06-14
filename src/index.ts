@@ -1,12 +1,8 @@
-interface Defer {
-  resolve: () => void;
-}
-
 export class Queue {
   private _fx = [];
   private _init = true;
   private _lock = false;
-  private _finishDefers = new Set<Defer>();
+  private _finishDefers = new Set<{ resolve: () => void }>();
 
   private _next() {
     if (!this._lock) {
@@ -27,7 +23,7 @@ export class Queue {
     }
   }
 
-  add(fn: (next: () => void) => any) {
+  public add(fn: (next: () => void) => any) {
     this._fx.push(fn);
     if (this._init) {
       this._lock = false;
@@ -36,11 +32,9 @@ export class Queue {
     }
   }
 
-  awaitFinish() {
-    if (this._init) {
-      return Promise.resolve();
-    }
-    const defer = {} as Defer;
+  public awaitFinish() {
+    if (this._init) return Promise.resolve();
+    const defer = {} as { resolve: () => void };
     this._finishDefers.add(defer);
     return new Promise<void>((resolve) => {
       defer.resolve = resolve;

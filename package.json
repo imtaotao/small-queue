@@ -1,11 +1,11 @@
 {
   "name": "small-queue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tool Library",
   "types": "dist/index.d.ts",
   "main": "dist/queue.cjs.js",
-  "unpkg": "./dist/hooks.umd.js",
-  "module": "dist/queue.esm-builder.js",
+  "unpkg": "./dist/queue.umd.js",
+  "module": "dist/queue.esm-bundler.js",
   "scripts": {
     "test": "jest",
     "build": "rimraf ./dist && rollup --config",

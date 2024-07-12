@@ -1,16 +1,17 @@
 {
   "name": "small-queue",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Tool Library",
-  "types": "dist/index.d.ts",
-  "main": "dist/queue.cjs.js",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/queue.cjs.js",
   "unpkg": "./dist/queue.umd.js",
-  "module": "dist/queue.esm-bundler.js",
+  "module": "./dist/queue.esm-bundler.js",
   "exports": {
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
-        "default": "./index.mjs"
+        "node": "./dist/queue.esm-bundler.mjs",
+        "default": "./dist/queue.esm-bundler.js"
       },
       "require": {
         "types": "./dist/index.d.ts",
@@ -18,11 +19,11 @@
       }
     }
   },
-  "files": ["index.mjs", "dist"],
+  "files": ["dist"],
   "scripts": {
     "test": "jest",
     "build": "rimraf ./dist && rollup --config",
-    "format": "prettier --write --parser typescript \"(src|dist)/**/*.(js|ts?(x))\""
+    "format": "prettier --write --parser typescript \"(src|dist)/**/*.((m)?js|ts?(x))\""
   },
   "author": "imtaotao",
   "keywords": [
